@@ -1,10 +1,10 @@
 #include "AsciiEngine.h"
 
-class CustomEngine : public AsciiEngine
+class CustomEngine : public Application
 {
 public:
-	CustomEngine(const AsciiEngineProps& props)
-		: AsciiEngine(props)
+	CustomEngine(const WindowProps& props)
+		: Application(props)
 	{
 	}
 
@@ -12,15 +12,15 @@ public:
 
 	virtual void OnUpdate() override
 	{
-		DrawLine({ 0, 0 }, { 20, 0 }, '#');
-		DrawLine({ 20, 0 }, { 20, 10 }, '#');
-		DrawLine({ 20, 10 }, { 0, 10 }, '#');
-		DrawLine({ 0, 10 }, { 0, 0 }, '#');
+		Renderer::DrawLine({ 0, 0 }, { 20, 0 }, '#');
+		Renderer::DrawLine({ 20, 0 }, { 20, 10 }, '#');
+		Renderer::DrawLine({ 20, 10 }, { 0, 10 }, '#');
+		Renderer::DrawLine({ 0, 10 }, { 0, 0 }, '#');
 
-		Draw(playerPos, 'X');
+		Renderer::Draw(playerPos, 'X');
 
-		if (IsKeyPressed(VK_LBUTTON))
-			DrawString({ 0, 12 }, "Key was Pressed");
+		if (Input::IsKeyPressed(VK_LBUTTON))
+			Renderer::DrawString({ 0, 12 }, "Key was Pressed");
 
 		if (playerPos.y == 2 && playerPos.x < 18)
 			playerPos.x++;
