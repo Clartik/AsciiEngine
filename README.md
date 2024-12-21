@@ -14,6 +14,9 @@ Originally made for a solo project in 2022 but now is repurposed as an easy tool
 2. Download Latest Release
 3. Follow the Setup Instructions on There
 
+## Dependencies
+GLM is a dependency for this library. Please install and setup the GLM library to allow AsciiEngine to work accordingly.
+
 ## Quick Example
 ```cpp
 #include "AsciiEngine.h"
@@ -104,6 +107,40 @@ int main()
 	AsciiEngine::Application* app = new CustomEngine({ 22, 16 });
 	app->Run();
 	delete app;
+}
+```
+
+#### Renderer
+All functions in the Renderer are static. Ensure to call the Renderer after the Engine's constructor was called.
+
+Draws a single character on screen.
+```cpp
+static void Draw(const glm::ivec2& position, char printChar, const Color& color = Color::WHITE)
+{
+}
+```
+
+Draws a string of text on screen.
+```cpp
+static void DrawString(const glm::ivec2& position, const std::string& printString, const Color& color = Color::WHITE);
+{
+}
+```
+
+Draws a line on screen by controlling the start and end position of the line.
+```cpp
+static void DrawLine(const glm::ivec2& startPos, const glm::ivec2& endPos, char printChar, const Color& color = Color::WHITE);
+{
+}
+```
+
+#### Input
+All functions in the Input are static. Ensure to call the Input system after the Engine's constructor was called.
+
+Checks if a key is pressed. All keys including mouse buttons work on this function.
+```cpp
+bool Input::IsKeyPressed(Key key)
+{
 }
 ```
 
