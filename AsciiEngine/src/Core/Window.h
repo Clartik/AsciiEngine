@@ -13,6 +13,12 @@ struct WindowProps
 class Window
 {
 public:
+	struct ScreenElement
+	{
+		char Character;
+		AsciiEngineColor Color;
+	};
+public:
 	Window(int fps);
 	Window(const WindowProps& props);
 	~Window();
@@ -59,12 +65,6 @@ private:
 	/// Cleans the Screen Buffer
 	/// </summary>
 	void CleanScreenBuffer();
-private:
-	struct ScreenElement
-	{
-		char Character;
-		AsciiEngineColor Color;
-	};
 private:
 	/// <summary>
 	/// Width and Height of Allocated Console Screen

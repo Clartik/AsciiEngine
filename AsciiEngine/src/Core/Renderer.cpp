@@ -83,3 +83,16 @@ void Renderer::DrawLine(const glm::ivec2& startPos, const glm::ivec2& endPos, ch
 		}
 	}
 }
+
+bool Renderer::IsDrawingOutOfBounds(const glm::ivec2& position)
+{
+	Window& window = Application::Get().GetWindow();
+
+	if (position.x < 0 || position.y < 0 || position.x > window.GetWidth() - 1 || position.y > window.GetHeight()  - 1)
+	{
+		Renderer::DrawString({ 0, 0 }, "[ERROR]: You Are Accessing Out of Bounds!", AsciiEngineColor::RED);
+		return true;
+	}
+
+	return false;
+}

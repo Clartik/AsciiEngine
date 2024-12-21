@@ -4,11 +4,19 @@
 #include <string>
 
 #include "Color.h"
+#include "Window.h"
+
+struct ScreenElement
+{
+	char Character;
+	AsciiEngineColor Color;
+};
 
 class Renderer
 {
 public:
 	static void Init(char emptyChar = ' ');
+	static void Render();
 
 	static inline char GetEmptyChar() { return EMPTY_CHAR; }
 
@@ -36,6 +44,13 @@ public:
 	/// <param name="printChar">The Character That Will Be Drawn</param>
 	/// <param name="color">The Color of the Character</param>
 	static void DrawLine(const glm::ivec2& startPos, const glm::ivec2& endPos, char printChar, const AsciiEngineColor& color = AsciiEngineColor::WHITE);
+private:
+	/// <summary>
+	/// Checks If You Are Drawing Out of Bounds
+	/// </summary>
+	/// <param name="position">The Position</param>
+	/// <returns>Whether You Are Drawing Out of Frame Or Not</returns>
+	static bool IsDrawingOutOfBounds(const glm::ivec2& position);
 private:
 	/// <summary>
 	/// The Character of that is used to Render Whitespace
