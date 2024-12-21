@@ -19,7 +19,7 @@ public:
 
 		Renderer::Draw(playerPos, 'X');
 
-		if (Input::IsKeyPressed(VK_LBUTTON))
+		if (Input::IsKeyPressed(Key::MOUSE_LEFT))
 			Renderer::DrawString({ 0, 12 }, "Key was Pressed");
 
 		if (playerPos.y == 2 && playerPos.x < 18)

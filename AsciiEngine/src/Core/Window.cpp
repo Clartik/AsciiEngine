@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include <Windows.h>
+
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -95,13 +97,13 @@ bool Window::IsDrawingOutOfBounds(const glm::ivec2& position)
 	return false;
 }
 
-BOOL Window::SetCursorPosition(const glm::ivec2& cursorPos)
+void Window::SetCursorPosition(const glm::ivec2& cursorPos)
 {
 	COORD cPos;
 	cPos.X = cursorPos.x;
 	cPos.Y = cursorPos.y;
 
-	return SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cPos);
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cPos);
 }
 
 void Window::CleanScreenBuffer()

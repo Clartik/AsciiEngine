@@ -16,7 +16,6 @@ class Renderer
 {
 public:
 	static void Init(char emptyChar = ' ');
-	static void Render();
 
 	static inline char GetEmptyChar() { return EMPTY_CHAR; }
 

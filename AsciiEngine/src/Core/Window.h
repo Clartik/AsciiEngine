@@ -53,7 +53,7 @@ private:
 	/// </summary>
 	/// <param name="cursorPos">The Position Where the Engine Will Draw</param>
 	/// <returns></returns>
-	BOOL SetCursorPosition(const glm::ivec2& cursorPos);
+	void SetCursorPosition(const glm::ivec2& cursorPos);
 
 	/// <summary>
 	/// Sets the Text Color
