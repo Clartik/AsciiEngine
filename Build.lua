@@ -10,8 +10,5 @@ workspace "AsciiEngine"
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "AsciiEngine"
-	include "AsciiEngine/Build-Engine.lua"
-group ""
-
+include "AsciiEngine/Build-Engine.lua"
 include "Sandbox/Build-Sandbox.lua"
