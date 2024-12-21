@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Core/Application.h"
-#include "Core/Window.h"
-#include "Core/Renderer.h"
-#include "Input/Input.h"
+#include "AsciiEngine/Core/Application.h"
+#include "AsciiEngine/Core/Window.h"
+#include "AsciiEngine/Core/Renderer.h"
+#include "AsciiEngine/Input/Input.h"

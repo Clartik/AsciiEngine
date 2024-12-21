@@ -92,7 +92,7 @@ namespace AsciiEngine
 	{
 		if (position.x < 0 || position.y < 0 || position.x > m_Width - 1 || position.y > m_Height - 1)
 		{
-			Renderer::DrawString({ 0, 0 }, "[ERROR]: You Are Accessing Out of Bounds!", AsciiEngineColor::RED);
+			Renderer::DrawString({ 0, 0 }, "[ERROR]: You Are Accessing Out of Bounds!", Color::RED);
 			return true;
 		}
 
@@ -117,7 +117,7 @@ namespace AsciiEngine
 			{
 				ScreenElement& element = m_ScreenBuffer[row * m_Width + column];
 				element.Character = Renderer::GetEmptyChar();
-				element.Color = AsciiEngineColor::WHITE;
+				element.Color = Color::WHITE;
 			}
 		}
 	}
@@ -130,7 +130,7 @@ namespace AsciiEngine
 
 		if (!GetConsoleScreenBufferInfo(hConsoleOut, &csbi))
 		{
-			Renderer::DrawString({ 0, 0 }, "[ERROR]: You Are Accessing Out of Bounds!", AsciiEngineColor::RED);
+			Renderer::DrawString({ 0, 0 }, "[ERROR]: You Are Accessing Out of Bounds!", Color::RED);
 			return;
 		}
 

@@ -42,4 +42,4 @@ project "AsciiEngine"
        defines { "RELEASE" }
        runtime "Release"
        optimize "On"
-       symbols "Off"
+       symbols "On"
