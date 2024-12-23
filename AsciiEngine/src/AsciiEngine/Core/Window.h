@@ -1,8 +1,7 @@
 #pragma once
 
-#include <glm/glm.hpp>
-
 #include "Color.h"
+#include "AsciiEngine/Math/Vector2.h"
 
 namespace AsciiEngine
 {
@@ -28,7 +27,7 @@ namespace AsciiEngine
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		glm::ivec2 GetConsoleSize() const;
+		Vector2 GetConsoleSize() const;
 
 		/// <summary>
 		/// Show or Hide the Console Cursor
@@ -48,14 +47,14 @@ namespace AsciiEngine
 		/// </summary>
 		/// <param name="position">The Position</param>
 		/// <returns>Whether You Are Drawing Out of Frame Or Not</returns>
-		bool IsDrawingOutOfBounds(const glm::ivec2& position);
+		bool IsDrawingOutOfBounds(const Vector2& position);
 
 		/// <summary>
 		/// Sets the Position Where the Engine Will Draw
 		/// </summary>
 		/// <param name="cursorPos">The Position Where the Engine Will Draw</param>
 		/// <returns></returns>
-		void SetCursorPosition(const glm::ivec2& cursorPos);
+		void SetCursorPosition(const Vector2& cursorPos);
 
 		/// <summary>
 		/// Sets the Text Color

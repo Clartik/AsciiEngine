@@ -8,7 +8,7 @@ public:
 	{
 	}
 
-	glm::ivec2 playerPos = { 2, 2 };
+	AsciiEngine::Vector2 playerPos = { 2, 2 };
 
 	virtual void OnUpdate() override
 	{

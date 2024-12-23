@@ -14,7 +14,7 @@ namespace AsciiEngine
 		: m_FPS(fps)
 	{
 		// Set Initial Width and Height to be One Less than Total Width to account for the 0th column/row
-		glm::vec2 size = GetConsoleSize();
+		Vector2 size = GetConsoleSize();
 		m_Width = size.x - 1;
 		m_Height = size.y - 1;
 
@@ -46,7 +46,7 @@ namespace AsciiEngine
 	void Window::Render()
 	{
 		// Drawing From the Start
-		SetCursorPosition(glm::vec2(0, 0));
+		SetCursorPosition(Vector2(0, 0));
 
 		// Render on Screen
 		for (unsigned short row = 0; row < m_Height; row++)
@@ -75,20 +75,20 @@ namespace AsciiEngine
 		SetConsoleCursorInfo(out, &cursorInfo);
 	}
 
-	glm::ivec2 Window::GetConsoleSize() const
+	Vector2 Window::GetConsoleSize() const
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi;
 
 		GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
 
-		glm::ivec2 vec;
+		Vector2 vec;
 		vec.x = csbi.srWindow.Right - csbi.srWindow.Left + 1;
 		vec.y = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
 
 		return vec;
 	}
 
-	bool Window::IsDrawingOutOfBounds(const glm::ivec2& position)
+	bool Window::IsDrawingOutOfBounds(const Vector2& position)
 	{
 		if (position.x < 0 || position.y < 0 || position.x > m_Width - 1 || position.y > m_Height - 1)
 		{
@@ -99,7 +99,7 @@ namespace AsciiEngine
 		return false;
 	}
 
-	void Window::SetCursorPosition(const glm::ivec2& cursorPos)
+	void Window::SetCursorPosition(const Vector2& cursorPos)
 	{
 		COORD cPos;
 		cPos.X = cursorPos.x;

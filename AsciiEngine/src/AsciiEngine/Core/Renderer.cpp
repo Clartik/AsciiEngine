@@ -19,7 +19,7 @@ namespace AsciiEngine
 		}
 	}
 
-	void Renderer::Draw(const glm::ivec2& position, char printChar, const Color& color)
+	void Renderer::Draw(const Vector2& position, char printChar, const Color& color)
 	{
 		Window& window = Application::Get().GetWindow();
 
@@ -31,7 +31,7 @@ namespace AsciiEngine
 		window.m_ScreenBuffer[position.y * window.m_Width + position.x].Character = printChar;
 	}
 
-	void Renderer::DrawString(const glm::ivec2& position, const std::string& printString, const Color& color)
+	void Renderer::DrawString(const Vector2& position, const std::string& printString, const Color& color)
 	{
 		Window& window = Application::Get().GetWindow();
 
@@ -50,7 +50,7 @@ namespace AsciiEngine
 		}
 	}
 
-	void Renderer::DrawLine(const glm::ivec2& startPos, const glm::ivec2& endPos, char printChar, const Color& color)
+	void Renderer::DrawLine(const Vector2& startPos, const Vector2& endPos, char printChar, const Color& color)
 	{
 		Window& window = Application::Get().GetWindow();
 
@@ -86,7 +86,7 @@ namespace AsciiEngine
 		}
 	}
 
-	bool Renderer::IsDrawingOutOfBounds(const glm::ivec2& position)
+	bool Renderer::IsDrawingOutOfBounds(const Vector2& position)
 	{
 		Window& window = Application::Get().GetWindow();
 
