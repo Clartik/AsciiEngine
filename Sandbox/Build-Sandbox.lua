@@ -17,8 +17,7 @@ project "Sandbox"
       "src",
       
 	  -- Include Core
-	  "../AsciiEngine/src",
-      "../AsciiEngine/vendor/glm"
+	  "../AsciiEngine/src"
    }
 
    links

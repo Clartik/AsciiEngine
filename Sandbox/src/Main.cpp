@@ -1,23 +1,25 @@
 #include <AsciiEngine.h>
 
-class CustomEngine : public AsciiEngine::Application
+using namespace AsciiEngine;
+
+class CustomEngine : public Application
 {
 public:
-	CustomEngine(const AsciiEngine::WindowProps& props)
-		: AsciiEngine::Application(props)
+	CustomEngine(const WindowProps& props)
+		: Application(props)
 	{
 	}
 
-	AsciiEngine::Vector2 playerPos = { 2, 2 };
+	Vector2 playerPos = { 2, 2 };
 
 	virtual void OnUpdate() override
 	{
-		AsciiEngine::Renderer::DrawLine({ 0, 0 }, { 20, 0 }, '#');
-		AsciiEngine::Renderer::DrawLine({ 20, 0 }, { 20, 10 }, '#');
-		AsciiEngine::Renderer::DrawLine({ 20, 10 }, { 0, 10 }, '#');
-		AsciiEngine::Renderer::DrawLine({ 0, 10 }, { 0, 0 }, '#');
+		Renderer::DrawLine({ 0, 0 }, { 20, 0 }, '#');
+		Renderer::DrawLine({ 20, 0 }, { 20, 10 }, '#');
+		Renderer::DrawLine({ 20, 10 }, { 0, 10 }, '#');
+		Renderer::DrawLine({ 0, 10 }, { 0, 0 }, '#');
 
-		AsciiEngine::Renderer::Draw(playerPos, 'X');
+		Renderer::Draw(playerPos, 'X');
 
 		if (playerPos.y == 2 && playerPos.x < 18)
 			playerPos.x++;
@@ -32,7 +34,7 @@ public:
 
 int main()
 {
-	AsciiEngine::Application* app = new CustomEngine({ 22, 16 });
+	Application* app = new CustomEngine({ 22, 16 });
 	app->Run();
 	delete app;
 }

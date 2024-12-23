@@ -19,8 +19,6 @@ project "AsciiEngine"
    includedirs
    {
       "src",
-      "src/AsciiEngine",
-    --   "vendor/glm",
    }
 
    links

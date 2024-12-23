@@ -11,4 +11,12 @@ namespace AsciiEngine
 
 		return GetAsyncKeyState(vKey) & 0x8000;
 	}
+
+	Vector2 Input::GetMousePosition()
+	{
+		POINT p;
+		GetCursorPos(&p);
+
+		return Vector2(p.x, p.y);
+	}
 }

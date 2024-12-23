@@ -2,6 +2,8 @@
 
 #include "Keycodes.h"
 
+#include "AsciiEngine/Math/Vector2.h"
+
 namespace AsciiEngine
 {
 	class Input
@@ -13,5 +15,7 @@ namespace AsciiEngine
 		/// <param name="key">Enter a Character/Number for Corresponding Keys or use VK_KEY for Virtual Keys</param>
 		/// <returns></returns>
 		static bool IsKeyPressed(Key key);
+
+		static Vector2 GetMousePosition();
 	};
 }
